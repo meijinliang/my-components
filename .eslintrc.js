@@ -1,27 +1,27 @@
 module.exports = {
   root: true,
   env: {
-    node: true,
+    node: true
   },
-  extends: [
-    "plugin:vue/recommended",
-    "eslint:recommended"
-  ],
+  extends: ['plugin:vue/recommended', 'eslint:recommended'],
   parserOptions: {
-    parser: "@babel/eslint-parser",
+    parser: '@babel/eslint-parser'
   },
   rules: {
-    "vue/max-attributes-per-line": [2, {
-      "singleline": 10,
-      "multiline": {
-        "max": 1,
-        "allowFirstLine": false
-      }
-    }],
-    "vue/singleline-html-element-content-newline": "off",
-    "vue/multiline-html-element-content-newline": "off",
-    "vue/name-property-casing": ["error", "PascalCase"],
-    "vue/no-v-html": "off",
+    // 'vue/max-attributes-per-line': [
+    //   2,
+    //   {
+    //     singleline: 4, // 标签为单行时，每行最大属性数为4 默认为1
+    //     multiline: {
+    //       max: 1, // 标签为多行时，每行最大属性数为1，默认值1
+    //       allowFirstLine: false // 不允许属性与该标记名称位于同一行，默认值为false
+    //     }
+    //   }
+    // ],
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/multiline-html-element-content-newline': 'off',
+    'vue/name-property-casing': ['error', 'PascalCase'],
+    'vue/no-v-html': 'off',
     'accessor-pairs': 2,
     'arrow-spacing': [2, {
       'before': true,
@@ -44,7 +44,7 @@ module.exports = {
     'curly': [2, 'multi-line'],
     'dot-location': [2, 'property'],
     'eol-last': 2,
-    'eqeqeq': ["error", "always", { "null": "ignore" }],
+    'eqeqeq': ['error', 'always', { 'null': 'ignore' }],
     'generator-star-spacing': [2, {
       'before': true,
       'after': true
@@ -192,4 +192,4 @@ module.exports = {
     }],
     'array-bracket-spacing': [2, 'never']
   }
-};
+}
