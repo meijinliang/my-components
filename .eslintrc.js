@@ -1,27 +1,30 @@
 module.exports = {
   root: true,
   env: {
-    node: true,
+    node: true
   },
   extends: [
-    "plugin:vue/recommended",
-    "eslint:recommended"
+    'plugin:vue/recommended',
+    'eslint:recommended'
   ],
   parserOptions: {
-    parser: "@babel/eslint-parser",
+    parser: '@babel/eslint-parser'
   },
   rules: {
-    "vue/max-attributes-per-line": [2, {
-      "singleline": 10,
-      "multiline": {
-        "max": 1,
-        "allowFirstLine": false
+    'vue/multi-word-component-names': ['error', {
+      'ignores': ['Layout', 'Menu']
+    }],
+    'vue/max-attributes-per-line': [2, {
+      'singleline': 10,
+      'multiline': {
+        'max': 1
+        // 'allowFirstLine': false
       }
     }],
-    "vue/singleline-html-element-content-newline": "off",
-    "vue/multiline-html-element-content-newline": "off",
-    "vue/name-property-casing": ["error", "PascalCase"],
-    "vue/no-v-html": "off",
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/multiline-html-element-content-newline': 'off',
+    'vue/name-property-casing': ['error', 'PascalCase'],
+    'vue/no-v-html': 'off',
     'accessor-pairs': 2,
     'arrow-spacing': [2, {
       'before': true,
@@ -44,7 +47,7 @@ module.exports = {
     'curly': [2, 'multi-line'],
     'dot-location': [2, 'property'],
     'eol-last': 2,
-    'eqeqeq': ["error", "always", { "null": "ignore" }],
+    'eqeqeq': ['error', 'always', { 'null': 'ignore' }],
     'generator-star-spacing': [2, {
       'before': true,
       'after': true
@@ -192,4 +195,4 @@ module.exports = {
     }],
     'array-bracket-spacing': [2, 'never']
   }
-};
+}

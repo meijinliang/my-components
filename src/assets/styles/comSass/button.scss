@@ -1,0 +1,127 @@
+.my-button {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: $--button-default-background-color;
+  border: $--border-base;
+  border-color: $--button-default-border-color;
+  color: $--button-default-font-color;
+  // 去除系统默认appearance样式
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: .1s;
+  font-weight: $--button-font-weight;
+
+  // element中将下面三个属性拆成变量混入
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  // 设置无法选中文本 按钮中在加载状态的时候能够选中
+  @include utils-user-select(none);
+  // 相邻兄弟选择器 可以选择紧接再另一个元素后的元素
+  & + & {
+    margin-left: 10px;
+  }
+  &:hover,
+  &:focus {
+    color: $--color-primary;
+    border-color: $--color-primary-light-7;
+    background-color: $--color-primary-light-9;
+  }
+
+  &:active {
+    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    outline: none;
+  }
+
+  // 解决点击某些元素后出现的边框问题
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  /* [class*="el-icon-"] * 类名中包含el-iocn的元素 ^ 类名中以el-iocn开头的元素 & 类名中以el-iocn结尾的元素 */
+  @include when(plain) {
+    &:hover,
+    &:focus {
+      background: $--color-white;
+      border-color: $--color-primary;
+      color: $--color-primary;
+    }
+
+    &:active {
+      background: $--color-white;
+      border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+      color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+      outline: none;
+    }
+  }
+  @include when(disabled) {
+    &,
+    &:hover,
+    &:focus {
+      color: $--button-disabled-font-color;
+      cursor: not-allowed;
+      background-image: none;
+      background-color: $--button-disabled-background-color;
+      border-color: $--button-disabled-border-color;
+    }
+
+    &.el-button--text {
+      background-color: transparent;
+    }
+
+    &.is-plain {
+      &,
+      &:hover,
+      &:focus {
+        background-color: $--color-white;
+        border-color: $--button-disabled-border-color;
+        color: $--button-disabled-font-color;
+      }
+    }
+  }
+
+  @include when(loading) {
+    position: relative;
+    pointer-events: none;
+
+    &:before {
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      border-radius: inherit;
+      background-color: rgba(255,255,255,.35);
+    }
+  }
+  @include m(primary) {
+    @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
+  }
+  @include m(success) {
+    @include button-variant($--button-success-font-color, $--button-success-background-color, $--button-success-border-color);
+  }
+  @include m(warning) {
+    @include button-variant($--button-warning-font-color, $--button-warning-background-color, $--button-warning-border-color);
+  }
+  @include m(danger) {
+    @include button-variant($--button-danger-font-color, $--button-danger-background-color, $--button-danger-border-color);
+  }
+  @include m(info) {
+    @include button-variant($--button-info-font-color, $--button-info-background-color, $--button-info-border-color);
+  }
+  @include when(round) {
+    border-radius: 20px;
+    padding: 12px 23px;
+  }
+  @include when(circle) {
+    border-radius: 50%;
+    padding: $--button-padding-vertical;
+  }
+}
