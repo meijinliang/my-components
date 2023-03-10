@@ -18,13 +18,7 @@ export default {
   data() {
     return {
       currentIndex: 0,
-      menuList: [
-        {
-          label: 'Button 按钮',
-          path: '/button',
-          index: 1
-        }
-      ]
+      menuList: []
     }
   },
   watch: {
@@ -35,6 +29,14 @@ export default {
     }
   },
   created() {
+    this.menuList = this.$router.options.routes[0].children.filter(item => item.label).map((x, i) => {
+      return {
+        label: x.label,
+        path: x.path,
+        index: i + 1
+      }
+    })
+    console.log(this.menuList)
     this.setCurrentIndex()
   },
   methods: {
@@ -63,12 +65,15 @@ export default {
       color: #444;
       line-height: 40px;
       font-size: 14px;
+      padding: 0 10px;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
       font-weight: 400;
       &:hover {
         outline: none;
+        border-radius: 4px;
+        color: #409eff;
         background-color: #ecf5ff;
       }
       &.is-active {

@@ -1,0 +1,30 @@
+.my-input {
+  position: relative;
+  font-size: $--input-font-size;
+  display: inline-block;
+  width: 100%;
+
+  // 这个样式在文本框中才会用到
+  @include scroll-bar;
+  &--inner {
+    -webkit-appearance: none;
+    background-color: $--input-background-color;
+    background-image: none;
+    border-radius: $--input-border-radius;
+    border: $--input-border;
+    box-sizing: border-box;
+    color: $--input-font-color;
+    display: inline-block;
+    font-size: inherit;
+    height: $--input-height;
+    line-height: $--input-height;
+    outline: none;
+    padding: 0 15px;
+    transition: $--border-transition-base;
+    width: 100%;
+
+    // &::-ms-reveal {
+    //   display: none;
+    // }
+  }
+}

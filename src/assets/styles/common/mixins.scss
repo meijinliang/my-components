@@ -4,6 +4,7 @@
   -ms-user-select: $value;
 }
 
+// 创建修饰符类名 如按钮type-parmary 创建类名 &--parmary
 @mixin m($modifier) {
   $currentSelector: '';
   // @each 循环 $unit 单个元素 $modifier循环列表
@@ -97,6 +98,46 @@
       color: mix($--color-white, $color, 40%);
       background-color: mix($--color-white, $color, 90%);
       border-color: mix($--color-white, $color, 80%);
+    }
+  }
+}
+
+/* Scrollbar 滚动条 */
+@mixin scroll-bar {
+  $--scrollbar-thumb-background: #b4bccc;
+  $--scrollbar-track-background: #fff;
+
+  // css伪类选择器影响一个元素的滚动样式
+  // 仅仅在支持Webkit的浏览器(例如，谷歌Chrome，苹果Safari)可以使用
+  &::-webkit-scrollbar {
+    z-index: 11;
+    width: 6px;
+  }
+  // horizontal伪类使用于任何水平方向上的滚动条
+  &:horizontal {
+    height: 6px;
+  }
+
+  // 滚动条里面的小方块
+  &-thumb {
+    border-radius: 5px;
+    width: 6px;
+    background: $--scrollbar-thumb-background;
+  }
+
+  // 边角，即两个滚动条的交汇处
+  &-corner {
+    background: $--scrollbar-track-background;
+  }
+
+  // 滚动条的轨道
+  &-track {
+    background: $--scrollbar-track-background;
+
+    // 滚动条没有滑块的轨道部分 *不是很理解是哪块的样式
+    &-piece {
+      width: 6px;
+      background: $--scrollbar-track-background;
     }
   }
 }
