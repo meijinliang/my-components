@@ -1,20 +1,25 @@
 <template>
-  <div />
+  <div>
+    home
+
+  </div>
 </template>
 
 <script>
+
 export default {
   name: 'HomePage',
+
+  props: {
+
+  },
   data() {
     return {
+
     }
   },
-  computed: {
-  },
-  methods: {}
+  methods: {
+
+  }
 }
 </script>
-
-<style lang='scss' scoped>
-
-</style>

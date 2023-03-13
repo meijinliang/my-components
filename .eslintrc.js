@@ -3,11 +3,19 @@ module.exports = {
   env: {
     node: true
   },
+<<<<<<< HEAD
   extends: ['plugin:vue/recommended', 'eslint:recommended'],
+=======
+  extends: [
+    'plugin:vue/recommended',
+    'eslint:recommended'
+  ],
+>>>>>>> e3c1cce61b2ab1684557e9cfdebb2babf93df2e4
   parserOptions: {
     parser: '@babel/eslint-parser'
   },
   rules: {
+<<<<<<< HEAD
     // 'vue/max-attributes-per-line': [
     //   2,
     //   {
@@ -18,6 +26,18 @@ module.exports = {
     //     }
     //   }
     // ],
+=======
+    'vue/multi-word-component-names': ['error', {
+      'ignores': ['Layout', 'Menu']
+    }],
+    'vue/max-attributes-per-line': [2, {
+      'singleline': 10,
+      'multiline': {
+        'max': 1
+        // 'allowFirstLine': false
+      }
+    }],
+>>>>>>> e3c1cce61b2ab1684557e9cfdebb2babf93df2e4
     'vue/singleline-html-element-content-newline': 'off',
     'vue/multiline-html-element-content-newline': 'off',
     'vue/name-property-casing': ['error', 'PascalCase'],

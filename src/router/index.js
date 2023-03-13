@@ -1,35 +1,41 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Layout from '@/layout'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    redirect: 'home',
-    component: Layout,
+    redirect: '/home',
+    component: () => import('@/layout'),
     children: [
       {
-        path: 'home',
+        path: '/home',
         name: 'Home',
-        // import 异步加载
+        label: '',
         component: () => import('@/views/home')
       },
       {
-        path: '/form',
-        name: 'Form',
-        component: () => import('@/views/form')
+        path: '/button',
+        name: 'button',
+        label: 'Button 按钮',
+        component: () => import('@/views/button')
+      },
+      {
+        path: '/input',
+        name: 'input',
+        label: 'Input 输入框',
+        component: () => import('@/views/input')
+      },
+      {
+        path: '/icon',
+        name: 'icon',
+        label: 'Icon 图标',
+        component: () => import('@/views/icon')
       }
     ]
   }
 ]
-
-export const wildcardRoute = {
-  path: '*',
-  redirect: '/404',
-  hidden: true
-}
 
 const router = new VueRouter({
   routes
