@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-module.exports = {
-  lintOnSave: true
-}
-=======
 const { defineConfig } = require('@vue/cli-service')
 const path = require('path')
 // const fs = require('fs')
@@ -27,4 +22,3 @@ module.exports = defineConfig({
   //   }
   // }
 })
->>>>>>> e3c1cce61b2ab1684557e9cfdebb2babf93df2e4

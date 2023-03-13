@@ -3,30 +3,14 @@ module.exports = {
   env: {
     node: true
   },
-<<<<<<< HEAD
-  extends: ['plugin:vue/recommended', 'eslint:recommended'],
-=======
   extends: [
     'plugin:vue/recommended',
     'eslint:recommended'
   ],
->>>>>>> e3c1cce61b2ab1684557e9cfdebb2babf93df2e4
   parserOptions: {
     parser: '@babel/eslint-parser'
   },
   rules: {
-<<<<<<< HEAD
-    // 'vue/max-attributes-per-line': [
-    //   2,
-    //   {
-    //     singleline: 4, // 标签为单行时，每行最大属性数为4 默认为1
-    //     multiline: {
-    //       max: 1, // 标签为多行时，每行最大属性数为1，默认值1
-    //       allowFirstLine: false // 不允许属性与该标记名称位于同一行，默认值为false
-    //     }
-    //   }
-    // ],
-=======
     'vue/multi-word-component-names': ['error', {
       'ignores': ['Layout', 'Menu']
     }],
@@ -37,7 +21,6 @@ module.exports = {
         // 'allowFirstLine': false
       }
     }],
->>>>>>> e3c1cce61b2ab1684557e9cfdebb2babf93df2e4
     'vue/singleline-html-element-content-newline': 'off',
     'vue/multiline-html-element-content-newline': 'off',
     'vue/name-property-casing': ['error', 'PascalCase'],
