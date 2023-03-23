@@ -26,6 +26,7 @@
       <my-button type="warning" round>警告按钮</my-button>
       <my-button type="danger" round>危险按钮</my-button>
     </div>
+    <h3>禁用状态</h3>
     <div class="mt16">
       <my-button disabled>默认按钮</my-button>
       <my-button type="primary" disabled>主要按钮</my-button>
@@ -34,6 +35,7 @@
       <my-button type="warning" disabled>警告按钮</my-button>
       <my-button type="danger" disabled>危险按钮</my-button>
     </div>
+    <h3>加载状态</h3>
     <div class="mt16">
       <my-button :loading="true">默认按钮</my-button>
       <my-button type="primary" :loading="true">主要按钮</my-button>
@@ -41,6 +43,11 @@
       <my-button type="info" :loading="true">信息按钮</my-button>
       <my-button type="warning" :loading="true">警告按钮</my-button>
       <my-button type="danger" :loading="true">危险按钮</my-button>
+    </div>
+    <h3>图标按钮</h3>
+    <div class="mt16">
+      <my-button icon="el-icon-search" type="primary" />
+      <my-button icon="el-icon-edit" type="primary" />
     </div>
   </div>
 </template>

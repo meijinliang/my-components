@@ -17,7 +17,8 @@
     ]"
     @click="handleClick"
   >
-    <i v-if="loading">加载中</i>
+    <i v-if="loading" class="el-icon-loading" />
+    <i v-if="icon && !loading" :class="icon" />
     <span v-if="$slots.default">
       <slot />
     </span>
@@ -52,7 +53,11 @@ export default {
     circle: Boolean,
     plain: Boolean,
     // 是否默认聚焦
-    autofocus: Boolean
+    autofocus: Boolean,
+    icon: {
+      type: String,
+      default: ''
+    }
   },
   data() {
     return {

@@ -40,6 +40,13 @@
     outline: none;
   }
 
+  // my-button元素中的类名有el-icon
+  & [class*="el-icon-"] {
+    & + span {
+      margin-left: 5px;
+    }
+  }
+
   // 解决点击某些元素后出现的边框问题
   &::-moz-focus-inner {
     border: 0;
